@@ -27,12 +27,12 @@
                 height: 300,
                 width: 200,
                 padding: 0,
-                backgoundColor: "red",
                 borderWidth: 2,
                 borderColor: "black",
+                borderStyle: "solid",
             }
             return (
-                < div style={ProfileStyle} >
+                <div style={ProfileStyle} >
                     <Picture />
                     <Username />
                     <GetConnect />
@@ -57,7 +57,8 @@
         //Username Component
         function Username() {
             var UsernameStyle = {
-                fontSize: 24,
+                fontSize: 30,
+                textAlign: "center",
                 fontFamily: "Arial, Helvetica, sans-serif",
                 margin: 20,
             }
@@ -68,8 +69,11 @@
 
         //Get connected - Complex component
         function GetConnect() {
+            var GetConnectStyle = {
+                textAlign: "center",
+            }
             return (
-                <div>
+                <div style={GetConnectStyle}>
                     <Like />
                     <Share />
                     <Add />
@@ -79,7 +83,8 @@
         }
 
         var iconStyle = {
-            margin: 20,
+            margin: 10,
+            fontSize: 30,
         }
 
         //Like
