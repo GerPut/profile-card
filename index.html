@@ -14,23 +14,74 @@
 </head>
 
 <body>
-    <!-- Designated location to insert react content -->
     <div id="app">React has not rendered yet</div>
 
-    <!-- Javascript  -->
     <script type="text/babel">
 
-        //Render react to the dom - will accept two arguments (react what, react where)
+        //Our Component//
+        //Profile component
+        function Profile() {
+            return (
+                <div>
+                    <Picture />
+                    <Username />
+                    <GetConnect />
+                </div>
+            );
+        }
+
+        //Picture component
+        function Picture() {
+            return (
+                <img src={'./person3.jpeg'} />
+            );
+        }
+
+        //Username Component
+        function Username() {
+            return (
+                <h1>John Doe</h1>
+            );
+        }
+
+        //Get connected - Complex component
+        function GetConnect() {
+            return (
+                <div>
+                    <Like />
+                    <Share />
+                    <Add />
+
+                </div>
+            );
+        }
+
+        //Like
+        function Like() {
+            return (
+                <div>
+                </div>
+            );
+        }
+        //Share
+        function Share() {
+            return (
+                <div>
+                </div>
+            );
+        }
+        //Add
+        function Add() {
+            return (
+                <div>
+                </div>
+            );
+        }
 
         ReactDOM.render(
-            //react what -JSX 
             <Profile />,
-            //react where - content rendered to the dom div with id of app
             document.getElementById("app")
         );
-
-
-
 
     </script>
 </body>
