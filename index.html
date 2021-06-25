@@ -15,15 +15,17 @@
     <title>Profile Card</title>
 </head>
 
-<body style="background-color: black; display:flex; justify-content: center; margin-top: 100px;">
+<body style="background-color: black;">
     <div id="app">React has not rendered yet</div>
 
     <script type="text/babel">
 
         //Our Component//
         //Profile component
-        function Profile() {
+        function Profile(props) {
             var ProfileStyle = {
+                display: "inline-block",
+                margin: 20,
                 textAlign: "center",
                 height: 300,
                 width: 200,
@@ -38,15 +40,15 @@
             }
             return (
                 <div style={ProfileStyle} >
-                    <Picture />
-                    <Username />
+                    <Picture img={props.img} />
+                    <Username name={props.name} />
                     <GetConnect />
                 </div >
             );
         }
 
         //Picture component
-        function Picture() {
+        function Picture(props) {
             var PictureStyle = {
                 display: "inline-block",
                 marginTop: 20,
@@ -63,7 +65,7 @@
         }
 
         //Username Component
-        function Username() {
+        function Username(props) {
             var UsernameStyle = {
                 fontSize: 30,
                 color: "#F2F1EE",
@@ -73,7 +75,7 @@
                 margin: 20,
             }
             return (
-                <h1 style={UsernameStyle}>John Doe</h1>
+                <h1 style={UsernameStyle}>{props.name}</h1>
             );
         }
 
@@ -117,8 +119,32 @@
         }
 
         ReactDOM.render(
-            <Profile />,
+            <div>
+                <Profile
+                    name="Robby-G"
+                    img=""
+                />,
+                <Profile
+                    name="Tommy-B"
+                    img=""
+                />
+                <Profile
+                    name="Charly-C"
+                    img=""
+                />
+                <Profile
+                    name="Katy-K"
+                    img=""
+                />
+                <Profile
+                    name="Johnny-J"
+                    img=""
+                />
+
+
+            </div>,
             document.getElementById("app")
+
         );
 
     </script>
